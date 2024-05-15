@@ -15,12 +15,12 @@ module.exports = {
       estudante_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'pessoas', key: 'id' },
+        references: { model: 'pessoas', key: 'id' }
       },
-      matricula_id: {
+      curso_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'curso', key: 'id' },
+        references: { model: 'cursos', key: 'id' }
       },
       createdAt: {
         allowNull: false,
