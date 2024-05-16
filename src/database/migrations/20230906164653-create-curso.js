@@ -21,12 +21,12 @@ module.exports = {
       docente_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'pessoas', key: 'id' },
+        references: { model: 'pessoas', key: 'id' }
       },
       categoria_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        references: { model: 'categorias', key: 'id' },
+        references: { model: 'categorias', key: 'id' }
       },
       createdAt: {
         allowNull: false,
