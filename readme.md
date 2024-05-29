@@ -14,12 +14,12 @@ Esta é uma API RESTful para gerenciar uma plataforma de matriculas. A API foi d
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
 - [Sequelize](https://sequelize.org/)
-- [MySQL](https://www.mysql.com/) (ou outro banco de dados suportado pelo Sequelize)
-
+- [MySQL](https://www.mysql.com/)
+  
 ## Requisitos
 
 - Node.js v14 ou superior
-- MySQL (ou outro banco de dados suportado pelo Sequelize)
+- MySQL
 
 ## Instalação
 
