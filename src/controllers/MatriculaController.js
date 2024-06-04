@@ -23,6 +23,20 @@ class MatriculaController extends Controller {
       return res.status(500).json({ message: error.message });
     }
   }
+
+  async pegaCursosLotado (req, res) {
+    try {
+      const cursosLotados = await matriculaServices.pegaEcontaRegistros({
+        status: 'matriculado'
+      });
+    
+      return res.status(200).json(cursosLotados);
+
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  }
+
 }
 
 module.exports = MatriculaController;
