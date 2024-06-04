@@ -5,11 +5,11 @@ class Services {
     this.model = nomeDoModel;
   }
 
-  async pegaTodosOsRegistros (where = {}) {
-    return dataSource[this.model].findAll({ where: { ...where }});
+  async pegaTodosOsRegistros(where = {}) {
+    return dataSource[this.model].findAll({ where: { ...where } });
   }
 
-  async pegaRegistrosPorEscopo (escopo) {
+  async pegaRegistrosPorEscopo(escopo) {
     return dataSource[this.model].scope(escopo).findAll();
   }
 
@@ -21,11 +21,8 @@ class Services {
     return dataSource[this.model].findOne({ where: { ...where } });
   }
 
-  async pegaEcontaRegistros(where) {
-    return dataSource[this.model].findAndCountAll({ 
-      where: { ...where },
-      limit: 2,
-      order: [['id', 'ASC']]});
+  async pegaEcontaRegistros(options) {
+    return dataSource[this.model].findAndCountAll({ ...options });
   }
 
   async criaRegistro(dadosDoRegistro) {
@@ -45,6 +42,7 @@ class Services {
   async excluiRegistro(id) {
     return dataSource[this.model].destroy({ where: { id: id } });
   }
+
 }
 
 module.exports = Services;

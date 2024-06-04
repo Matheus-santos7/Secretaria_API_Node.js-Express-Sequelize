@@ -13,8 +13,12 @@ class MatriculaController extends Controller {
 
     try {
       const listaMatriculaPorEstudante = await matriculaServices.pegaEcontaRegistros({
-        estudante_id: Number(estudante_id),
-        status: 'matriculado'
+        where : {
+          estudante_id: Number(estudante_id),
+          status: 'confirmado'
+        },
+        limit : 2,
+        order : [['id', 'DESC']]
       });
     
       return res.status(200).json(listaMatriculaPorEstudante);
@@ -27,7 +31,11 @@ class MatriculaController extends Controller {
   async pegaCursosLotado (req, res) {
     try {
       const cursosLotados = await matriculaServices.pegaEcontaRegistros({
-        status: 'matriculado'
+        where : {
+          status: 'confirmado'
+        },
+        attributes: ['curso_id'],
+        group: ['curso_id']
       });
     
       return res.status(200).json(cursosLotados);
