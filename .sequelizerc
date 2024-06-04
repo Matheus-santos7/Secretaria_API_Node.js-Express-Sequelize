@@ -1,8 +1,17 @@
+// Importa o módulo 'path', que é um módulo nativo do Node.js para manipulação de caminhos de arquivos e diretórios.
 const path = require('path');
 
+// Exporta um objeto contendo caminhos resolvidos para diferentes diretórios de configuração do banco de dados.
 module.exports = {
+  // O caminho para o arquivo de configuração do banco de dados, 'config.json'.
   'config': path.resolve('./src/database/config', 'config.json'),
+
+  // O caminho para o diretório que contém os modelos (models) do banco de dados.
   'models-path': path.resolve('./src/database/models'),
+
+  // O caminho para o diretório que contém os seeders (dados de exemplo para popular o banco de dados).
   'seeders-path': path.resolve('./src/database/seeders'),
+
+  // O caminho para o diretório que contém as migrações (scripts de alteração da estrutura do banco de dados).
   'migrations-path': path.resolve('./src/database/migrations'),
 }
