@@ -1,12 +1,18 @@
+// Importa a função Router do Express para definir rotas.
 const { Router } = require('express');
+
+// Importa os controllers que lidam com a lógica de negócio relacionada às pessoas e matrículas.
 const PessoaController = require('../controllers/PessoaController.js');
 const MatriculaController = require('../controllers/MatriculaController.js');
 
+// Cria instâncias dos controllers.
 const pessoaController = new PessoaController();
 const matriculaController = new MatriculaController();
 
+// Cria um novo objeto Router para definir as rotas.
 const router = Router();
 
+// Define as rotas utilizando os métodos HTTP e os métodos dos controllers correspondentes.
 router.get('/pessoas', (req, res) => pessoaController.pegaTodos(req, res));
 router.get('/pessoas/todos', (req, res) => pessoaController.pegaTodasAsPessoas(req, res));
 router.get('/pessoas/:id', (req, res) => pessoaController.pegaUmPorId(req, res));
@@ -23,4 +29,5 @@ router.post('/pessoas/:estudante_id/matriculas', (req, res) => matriculaControll
 router.put('/pessoas/:estudante_id/matriculas/:id', (req, res) => matriculaController.atualiza(req, res));
 router.delete('/pessoas/:estudante_id/matriculas/:id', (req, res) => matriculaController.exclui(req, res));
 
+// Exporta o objeto Router com as rotas definidas.
 module.exports = router;
