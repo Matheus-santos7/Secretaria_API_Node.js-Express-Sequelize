@@ -18,7 +18,7 @@ class CursoController extends Controller {
     //     [Op.gte]: data_inicial,
     //     [Op.lte]: data_final
     //   }
-    //};
+    // };
 
     //se existirem os parametros data_inicial e data_final, criar um prop {}
     data_inicial || data_final ? where.data_inicio = {} : null;
